@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens. Colours are CSS variables so light and dark themes swap in one
+ * place; Tailwind utilities (bg-paper, text-ink, …) resolve to them.
+ * Light is the default; dark applies only when the visitor picks it (data-theme="dark").
+ * The copper accent is a quiet nod to Zambia's best-known export.
+ */
+:root {
+  --paper: #f6f3ee;
+  --paper-raised: #fdfbf8;
+  --ink: #1b1a17;
+  --ink-soft: #46423c;
+  --ink-muted: #676157;
+  --line: #ddd6cb;
+  --copper: #9c4519;
+  --copper-soft: #f1e2d6;
+  --moss: #3b5538;
+  --moss-soft: #e1e8dc;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #141312;
+  --paper-raised: #1c1a18;
+  --ink: #f1ece4;
+  --ink-soft: #c9c1b5;
+  --ink-muted: #a1998e;
+  --line: #34302b;
+  --copper: #e8915f;
+  --copper-soft: #3a261b;
+  --moss: #a9c4a2;
+  --moss-soft: #232c21;
+  color-scheme: dark;
+}
+
+@theme {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-copper: var(--copper);
+  --color-copper-soft: var(--copper-soft);
+  --color-moss: var(--moss);
+  --color-moss-soft: var(--moss-soft);
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keeps anchored section headings clear of the sticky header. */
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background: var(--copper);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--copper);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
