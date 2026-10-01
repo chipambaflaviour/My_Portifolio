@@ -52,7 +52,7 @@ The output in `dist/` is a static site and can go on any static host. Copy `.env
 
 **Vercel / Netlify / Cloudflare Pages:** build command `npm run build`, output directory `dist`, and set `VITE_SITE_URL` in the project's environment variables.
 
-**GitHub Pages (this repository):** pushing to `main` runs `.github/workflows/deploy.yml`, which lints, builds with `VITE_BASE=/flaviour-portfolio/` and deploys to https://chipambaflaviour.github.io/flaviour-portfolio/. One-time setup: in the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+**GitHub Pages (this repository):** pushing to `main` runs `.github/workflows/deploy.yml`, which lints, builds with `VITE_BASE=/My_Portifolio/` and deploys to https://chipambaflaviour.github.io/My_Portifolio/. One-time setup: in the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
 
 ## Project structure
 

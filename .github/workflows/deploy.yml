@@ -28,8 +28,8 @@ jobs:
       - run: npm run lint
       - run: npm run build
         env:
-          VITE_BASE: /flaviour-portfolio/
-          VITE_SITE_URL: https://chipambaflaviour.github.io/flaviour-portfolio
+          VITE_BASE: /My_Portifolio/
+          VITE_SITE_URL: https://chipambaflaviour.github.io/My_Portifolio
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
