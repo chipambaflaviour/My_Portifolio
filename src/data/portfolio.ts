@@ -395,7 +395,18 @@ export const portfolio: Portfolio = {
       status: 'institutional',
       context: 'Lusaka South University College',
       year: '2025',
+      featured: true,
+      contribution: [
+        'Organised course content on Moodle: study materials, assignments, past papers and quizzes in one place.',
+        'Ran ICT and Moodle training sessions for staff and students.',
+      ],
       technologies: ['Moodle'],
+      image: {
+        src: '/images/projects/moodle.webp',
+        alt: 'LSUC Moodle "My courses" page showing course cards such as Business Law, Business Mathematics and Civil & Criminal Procedure',
+        width: 2000,
+        height: 1125,
+      },
     },
     {
       id: 'website-migration',
