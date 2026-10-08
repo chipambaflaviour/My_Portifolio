@@ -22,7 +22,8 @@ export function BrowserFrame({ photo, address }: { photo: Photo; address?: strin
         height={photo.height}
         loading="lazy"
         decoding="async"
-        className="block h-auto w-full"
+        // One frame shape for every project, whatever size the screenshot was taken at.
+        className="block aspect-video h-auto w-full object-cover object-top"
       />
     </div>
   )

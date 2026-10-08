@@ -288,6 +288,35 @@ export const portfolio: Portfolio = {
       },
     },
     {
+      id: 'igm-trust-property',
+      name: 'IGM Trust Properties',
+      purpose:
+        'A property portfolio system for a private client: finished rentals and construction projects in one register, with rent collection, construction and maintenance budgets, vendors and financial reports.',
+      impact: [
+        'Shows every property’s investment, rent received and net position in one register, instead of separate spreadsheets per building.',
+        'Tracks full and partial rent payments per unit, flags rent that is due, and keeps a history of every change to a payment.',
+        'Compares construction and maintenance spending against budget, so overruns show up while a project is still running.',
+        'Exports the rental income log to Excel or a printable PDF report for the owner and accountant.',
+      ],
+      status: 'developed',
+      context: 'Client work',
+      year: '2026',
+      featured: true,
+      contribution: [
+        'Designed and built independently for the client, from the data model and security rules to the interface.',
+        'Built the payment logic: partial payments, transactional updates that reject stale edits, and an audit trail.',
+        'Designed the interface and visual identity, including the logo mark.',
+      ],
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Firestore', 'Recharts'],
+      note: 'Private client system. The source is not public.',
+      image: {
+        src: '/images/projects/igm-trust-property.jpg',
+        alt: 'IGM Trust Properties portfolio overview with property, net profit, units and investment-recovered figures above a property register table',
+        width: 2000,
+        height: 1050,
+      },
+    },
+    {
       id: 'agriconnect',
       name: 'AgriConnect Zambia',
       purpose:

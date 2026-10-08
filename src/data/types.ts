@@ -86,7 +86,12 @@ export type ProjectStatus =
   | 'academic'
   | 'institutional'
 
-export type ProjectContext = 'Axis Solutions Africa' | 'Lusaka South University College' | 'Personal' | 'Academic'
+export type ProjectContext =
+  | 'Axis Solutions Africa'
+  | 'Lusaka South University College'
+  | 'Client work'
+  | 'Personal'
+  | 'Academic'
 
 export interface Project {
   id: string

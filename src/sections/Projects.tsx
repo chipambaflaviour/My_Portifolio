@@ -78,11 +78,18 @@ export function Projects() {
 
 function ShowcaseProject({ project, reversed }: { project: Project; reversed: boolean }) {
   return (
-    <article aria-labelledby={`${project.id}-title`} className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
-      <div className={`lg:sticky lg:top-24 lg:col-span-7 ${reversed ? 'lg:order-2' : ''}`}>
+    // On large screens the screenshot and the story share a top edge, and the
+    // stack, note and links sit under the screenshot so the columns balance.
+    // Explicit grid placement keeps the reading order (image, story, details)
+    // the same on small screens.
+    <article
+      aria-labelledby={`${project.id}-title`}
+      className="grid gap-x-12 gap-y-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-y-6"
+    >
+      <div className={`lg:col-span-7 lg:row-start-1 ${reversed ? 'lg:col-start-6' : 'lg:col-start-1'}`}>
         {project.image && <BrowserFrame photo={project.image} address={project.displayUrl} />}
       </div>
-      <div className={`lg:col-span-5 ${reversed ? 'lg:order-1' : ''}`}>
+      <div className={`lg:col-span-5 lg:row-span-2 lg:row-start-1 ${reversed ? 'lg:col-start-1' : 'lg:col-start-8'}`}>
         <ProjectMeta project={project} />
         <h3 id={`${project.id}-title`} className="mt-4 font-display text-3xl leading-tight font-medium text-ink sm:text-4xl">
           {project.name}
@@ -90,6 +97,10 @@ function ShowcaseProject({ project, reversed }: { project: Project; reversed: bo
         <p className="mt-4 leading-relaxed text-ink-soft">{project.purpose}</p>
         <Impact project={project} />
         <Contribution project={project} />
+      </div>
+      <div
+        className={`-mt-3 lg:col-span-7 lg:row-start-2 lg:mt-0 lg:[&>*:first-child]:mt-0 ${reversed ? 'lg:col-start-6' : 'lg:col-start-1'}`}
+      >
         <Technologies project={project} />
         <ProjectNote project={project} />
         <ProjectLinks project={project} />
